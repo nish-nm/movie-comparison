@@ -97,12 +97,20 @@
 					}
 				}
 				
+				if(strpos($exploded_string1[$i],"Rotten Tomatoes") == false){
+					$rt_rating1 = "N/A";
+				}
+				
 				if(strpos($exploded_string1[$i],"Metacritic") != false){
 					echo $meta_rating1_1 = explode("\":\"",$exploded_string1[$i+1])[1];
 					$meta_rating1 = explode("\"",$meta_rating1_1)[0];
 					if(strpos($meta_rating1_1,"Metacritic\":\"N/A")){
 						$meta_rating1 = "N/A";
 					}
+				}
+				
+				if(strpos($exploded_string1[$i],"Metacritic") == false){
+					$meta_rating1 = "N/A";
 				}
 				
 				if(strpos($exploded_string1[$i],"Metascore") != false){
@@ -112,8 +120,8 @@
 					}
 				}
 				
-				if(strpos($exploded_string1[$i],"Metacritic") == false){
-					$meta_rating1 = "N/A";
+				if(strpos($exploded_string1[$i],"Metascore") == false){
+					$metascore_rating1 = "N/A";
 				}
 				
 				if((string)strpos($exploded_string1[$i],"imdbID") == '0'){
@@ -223,6 +231,10 @@
 					}
 				}
 				
+				if(strpos($exploded_string2[$i],"Rotten Tomatoes") == false){
+					$rt_rating2 = "N/A";
+				}
+				
 				if(strpos($exploded_string2[$i],"Metacritic") != false){
 					$meta_rating2_1 = explode("\":\"",$exploded_string2[$i+1])[1];
 					$meta_rating2 = explode("\"",$meta_rating2_1)[0];
@@ -231,11 +243,19 @@
 					}
 				}
 				
+				if(strpos(@$exploded_string1[$i],"Metacritic") == false){
+					$meta_rating1 = "N/A";
+				}
+				
 				if(strpos($exploded_string2[$i],"Metascore") != false){
 					$metascore_rating2 = explode("\":\"",$exploded_string2[$i])[2];
 					if(strpos($exploded_string2[$i],"Metascore\":\"N/A")){
 						$metascore_rating2 = "N/A";
 					}
+				}
+				
+				if(strpos(@$exploded_string1[$i],"Metascore") == false){
+					$metascore_rating1 = "N/A";
 				}
 				
 				if((string)strpos($exploded_string2[$i],"imdbID") == '0'){
