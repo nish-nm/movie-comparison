@@ -9,10 +9,10 @@
 		$search_query2 = str_replace(" ","+",$search_query2);
 		
 		if(isset($_POST["year1"])){
-			$url1 = "http://www.omdbapi.com/?t=$search_query1&apikey=42ad3ff6&plot=full&y=$_POST[year1]";
+			$url1 = "http://www.omdbapi.com/?t=$search_query1&apikey=API_KEY&plot=full&y=$_POST[year1]";
 		}
 	
-		$url1 = "http://www.omdbapi.com/?t=$search_query1&apikey=42ad3ff6&plot=full";
+		$url1 = "http://www.omdbapi.com/?t=$search_query1&apikey=API_KEY&plot=full";
 		@$out1 = file_get_contents($url1);
 		
 		if($out1 == null || $out1 == false){
@@ -142,10 +142,10 @@
 		}
 		
 		if(isset($_POST["year2"])){
-			$url2 = "http://www.omdbapi.com/?t=$search_query2&apikey=42ad3ff6&plot=full&y=$_POST[year2]";
+			$url2 = "http://www.omdbapi.com/?t=$search_query2&apikey=API_KEY&plot=full&y=$_POST[year2]";
 		}
 	
-		$url2 = "http://www.omdbapi.com/?t=$search_query2&apikey=42ad3ff6&plot=full";
+		$url2 = "http://www.omdbapi.com/?t=$search_query2&apikey=API_KEY&plot=full";
 		@$out2 = file_get_contents($url2);
 		
 		if($out2 == null || $out2 == false){
